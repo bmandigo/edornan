@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial" />
+        <title>Time Zone App</title>
+        <link rel="stylesheet" href="stylesheet.css" />
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="topBox">
+            <div class="sectionTitle">
+                <h2>Time until our next visit:</h2>
+            </div>
+            <div class="countdown">
+                <p id="countdownTimer"></p>
+            </div>
+            <div class="date">
+                <p>December 18, 2021 - Unconfirmed</p>
+            </div>
+
+        </div>
+        <div class="timeZones">
+            <div class="timeBox" id="BC">
+                <div class="title">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Flag_of_British_Columbia.svg/125px-Flag_of_British_Columbia.svg.png" alt="British Columbia Flag">
+                    <h2>British Columbia</h2>
+                </div>
+                <div class="time">
+                    <p class="zoneTime" id="bcTime"></p>
+                    <p class="zoneDate" id="bcDate"></p>
+                </div>
+            </div>
+            <div class="timeBox" id="ON">
+                <div class="title">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Flag_of_Ontario.svg/125px-Flag_of_Ontario.svg.png" alt="Ontario Flag">
+                    <h2>Ontario</h2>
+                </div>
+                <div class="time">
+                    <p class="zoneTime" id="onTime"></p>
+                    <p class="zoneDate" id="onDate"></p>
+                </div>
+            </div>
+            <div class="timeBox" id="NF">
+                <div class="title">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Flag_of_Newfoundland_and_Labrador.svg/125px-Flag_of_Newfoundland_and_Labrador.svg.png" alt="Newfoundland and Labrador Flag">
+                    <h2>Newfoundland</h2>
+                </div>
+                <div class="time">
+                    <p class="zoneTime" id="nflTime"></p>
+                    <p class="zoneDate" id="nflDate"></p>
+                </div>
+            </div>
+            <div class="timeBox" id="FR">
+                <div class="title">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/125px-Flag_of_France.svg.png" alt="Newfoundland and Labrador Flag">
+                    <h2>France</h2>
+                </div>
+                <div class="time">
+                    <p class="zoneTime" id="frTime"></p>
+                    <p class="zoneDate" id="frDate"></p>
+                </div>
+            </div>
+        </div>
+        <div class="bottomBox">
+            <div class="sectionTitle">
+                <h2>Reach me anytime, anywhere...</h2>
+            </div>
+            <div class="appDrawer">
+                <div class="app">
+                    <a href="https://wa.me/9053410236">
+                        <img src="Asstes/WhatsAppIcon.png" alt="What's App Icon">
+                        <p>Whats App</p>
+                    </a>
+                </div>
+                <div class="app">
+                    <a href="sms:+19053410236">
+                        <img src="Asstes/MessagesIcon.png" alt="What's App Icon">
+                        <p>Messenges</p>
+                    </a>
+                </div>
+                <div class="app">
+                    <a href="tel:+19059380783">
+                        <img src="Asstes/PhoneIcon.png" alt="What's App Icon">
+                        <p>Phone</p>
+                    </a>
+                </div>
+                <div class="app">
+                    <a href="mailto: mandigoben@gmail.com">
+                        <img src="Asstes/MailIcon.png" alt="What's App Icon">
+                        <p>Mail</p>
+                    </a>
+                </div>
+                <div class="app">
+                    <a href="https:/m.me/mandigob">
+                        <img src="Asstes/MessengerIcon.jpeg" alt="What's App Icon">
+                        <p>Messenger</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <script>
+
+            var getBCTime = function (){
+                document.getElementById("bcTime").innerHTML = new Date().toLocaleString("en-US",{timeZone:'America/Vancouver', timeStyle:'medium', hourCycle:'h12'});
+            }
+            getBCTime ();
+            setInterval(getBCTime,1000);
+            
+            var getBCDate = function (){
+                document.getElementById("bcDate").innerHTML = new Date().toLocaleString("en-US",{timeZone:'America/Vancouver', dateStyle:'long', hourCycle:'h12'});
+            }
+            getBCDate ();
+            setInterval(getBCDate,1000);
+
+        </script>
+        <script>
+
+            var getONTime = function (){
+                document.getElementById("onTime").innerHTML = new Date().toLocaleString("en-US",{timeZone:'America/Toronto', timeStyle:'medium', hourCycle:'h12'});
+            }
+            getONTime ();
+            setInterval(getONTime,1000);
+            
+            var getONDate = function (){
+                document.getElementById("onDate").innerHTML = new Date().toLocaleString("en-US",{timeZone:'America/Toronto', dateStyle:'long', hourCycle:'h12'});
+            }
+            getONDate ();
+            setInterval(getONDate,1000);
+
+        </script>
+        <script>
+
+            var getNFLTime = function (){
+                document.getElementById("nflTime").innerHTML = new Date().toLocaleString("en-US",{timeZone:'Canada/Newfoundland', timeStyle:'medium', hourCycle:'h12'});
+            }
+            getNFLTime ();
+            setInterval(getNFLTime,1000);
+            
+            var getNFLDate = function (){
+                document.getElementById("nflDate").innerHTML = new Date().toLocaleString("en-US",{timeZone:'Canada/Newfoundland', dateStyle:'long', hourCycle:'h12'});
+            }
+            getNFLDate ();
+            setInterval(getNFLDate,1000);
+
+        </script>
+        <script>
+
+            var getFRTime = function (){
+                document.getElementById("frTime").innerHTML = new Date().toLocaleString("en-US",{timeZone:'Europe/Paris', timeStyle:'medium', hourCycle:'h12'});
+            }
+            getFRTime ();
+            setInterval(getFRTime,1000);
+            
+            var getFRDate = function (){
+                document.getElementById("frDate").innerHTML = new Date().toLocaleString("en-US",{timeZone:'Europe/Paris', dateStyle:'long', hourCycle:'h12'});
+            }
+            getFRDate ();
+            setInterval(getFRDate,1000);
+
+        </script>
+
+        <script>
+            // Set the date we're counting down to
+            var countDownDate = new Date("Dec 18 2021 13:05:00 GMT+0200").getTime();
+            
+            // Update the count down every 1 second
+            var x = setInterval(function() {
+            
+            // Get today's date and time
+            var now = new Date().getTime();
+            
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+            
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            // Display the result in the element with id="demo"
+            document.getElementById("countdownTimer").innerHTML = days + "d " + hours + "h "
+            + minutes + "m " + seconds + "s ";
+            
+            // If the count down is finished, write some text
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdownTimer").innerHTML = "EXPIRED";
+            }
+            }, 1000);
+        </script>
+        
+    </body>
